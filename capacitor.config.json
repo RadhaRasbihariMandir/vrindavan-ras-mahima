@@ -1,0 +1,6 @@
+{
+  "appId": "com.vrindavanras.rasmahima",
+  "appName": "Vrindavan Ras Mahima",
+  "webDir": "out",
+  "android": { "allowMixedContent": true }
+}
