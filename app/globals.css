@@ -1,0 +1,294 @@
+:root {
+  /* ---- Vani Darshan Editorial tokens ---- */
+  --bg: #FBF6EC;
+  --surface: #FFFDF7;
+  --text: #2B2118;
+  --heading: #4A2E1B;
+  --muted: #6B5A48;
+  --accent: #B03A2E;
+  --border: #E5D9C3;
+  --shadow-1: 0 1px 3px rgba(74, 46, 27, 0.08);
+  --shadow-2: 0 8px 28px rgba(74, 46, 27, 0.14);
+  --r-sm: 6px;
+  --r-md: 8px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-6: 24px; --sp-8: 32px; --sp-12: 48px; --sp-16: 64px; --sp-24: 96px;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-text: var(--font-tiro), "Noto Serif Devanagari", serif;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.44rem;
+  --step-3: 1.73rem;
+  --step-4: clamp(2.1rem, 5vw, 3.2rem);
+  --step-5: clamp(2.6rem, 7vw, 4.4rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed: 260ms;
+  --accent-soft: rgba(176, 58, 46, 0.1);
+}
+
+/* ================= Themes ================= */
+[data-theme="lotus"] {
+  --bg: #FCF1F2;
+  --surface: #FFFBFC;
+  --text: #33202A;
+  --heading: #6E2145;
+  --muted: #7A5A68;
+  --accent: #C2185B;
+  --border: #F0D5DD;
+  --accent-soft: rgba(194, 24, 91, 0.1);
+}
+[data-theme="vrindavan"] {
+  --bg: #F1F7EF;
+  --surface: #FBFEFA;
+  --text: #1F2E22;
+  --heading: #1B5E20;
+  --muted: #4E6B54;
+  --accent: #00838F;
+  --border: #D3E5D4;
+  --accent-soft: rgba(0, 131, 143, 0.1);
+}
+[data-theme="liquid-glass"] {
+  --bg: #EEF3F8;
+  --surface: rgba(255, 255, 255, 0.55);
+  --text: #14212E;
+  --heading: #0D3B5C;
+  --muted: #4A5E70;
+  --accent: #1E88E5;
+  --border: rgba(255, 255, 255, 0.9);
+  --shadow-2: 0 8px 32px rgba(13, 59, 92, 0.18);
+  --accent-soft: rgba(30, 136, 229, 0.12);
+}
+[data-theme="fire"] {
+  --bg: #FFF4EC;
+  --surface: #FFFCF8;
+  --text: #2E1B12;
+  --heading: #8C2D0E;
+  --muted: #7A5540;
+  --accent: #E64A19;
+  --border: #F2D8C4;
+  --accent-soft: rgba(230, 74, 25, 0.1);
+}
+[data-theme="water"] {
+  --bg: #EDF5F8;
+  --surface: #FAFDFE;
+  --text: #14262E;
+  --heading: #0B4F63;
+  --muted: #4A6672;
+  --accent: #0288D1;
+  --border: #CFE4EC;
+  --accent-soft: rgba(2, 136, 209, 0.1);
+}
+[data-theme="barsana"] {
+  --bg: #FBF3E4;
+  --surface: #FFFCF3;
+  --text: #322512;
+  --heading: #7A4A00;
+  --muted: #77623F;
+  --accent: #D98F00;
+  --border: #EDD9B0;
+  --accent-soft: rgba(217, 143, 0, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  transition: background var(--speed) var(--ease), color var(--speed) var(--ease);
+  min-height: 100vh;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--heading);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--sp-4);
+  font-weight: 600;
+}
+h1 { font-size: var(--step-5); }
+h2 { font-size: var(--step-4); }
+h3 { font-size: var(--step-2); }
+p { max-width: 68ch; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; }
+
+.container { max-width: 880px; margin: 0 auto; padding: 0 var(--sp-6); }
+.eyebrow {
+  font-family: var(--font-text);
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 44px;
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--r-md);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-text);
+  font-size: var(--step-1);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease), background var(--speed) var(--ease);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+.btn:active { transform: translateY(0); }
+.btn.secondary { background: transparent; color: var(--accent); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--sp-6);
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+
+/* verse styling */
+.verse {
+  font-size: var(--step-2);
+  line-height: 2;
+  color: var(--heading);
+  text-align: center;
+  max-width: 44ch;
+  margin: 0 auto var(--sp-6);
+}
+.verse + .verse { padding-top: var(--sp-6); border-top: 1px dashed var(--border); }
+.meaning { color: var(--muted); max-width: 60ch; margin: 0 auto; text-align: center; }
+
+/* ================= Theme effect layers ================= */
+.fx-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.fx-layer > * { position: absolute; }
+.page-content { position: relative; z-index: 1; }
+
+/* --- lotus petals --- */
+[data-theme="lotus"] .fx-layer i {
+  top: -8vh; width: 14px; height: 14px;
+  background: radial-gradient(circle at 30% 30%, #F8BBD0, #EC407A);
+  border-radius: 80% 0 80% 0;
+  opacity: 0.55;
+  animation: petal-fall linear infinite;
+}
+@keyframes petal-fall {
+  0% { transform: translateY(-5vh) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(340deg); }
+}
+/* --- vrindavan: floating peacock glow + leaves --- */
+[data-theme="vrindavan"] .fx-layer i {
+  top: -6vh; width: 10px; height: 22px;
+  background: linear-gradient(140deg, #00897B, #43A047 60%, #1B5E20);
+  border-radius: 0 60% 0 60%;
+  opacity: 0.4;
+  animation: leaf-sway linear infinite;
+}
+@keyframes leaf-sway {
+  0% { transform: translateY(-5vh) translateX(0) rotate(0deg); }
+  50% { transform: translateY(50vh) translateX(18px) rotate(90deg); }
+  100% { transform: translateY(110vh) translateX(-10px) rotate(200deg); }
+}
+[data-theme="vrindavan"] .fx-layer::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 70% 15%, rgba(0, 131, 143, 0.1), transparent),
+              radial-gradient(ellipse 50% 35% at 20% 80%, rgba(67, 160, 71, 0.1), transparent);
+}
+/* --- liquid glass: drifting glass blobs --- */
+[data-theme="liquid-glass"] .fx-layer i {
+  width: 42vmin; height: 42vmin;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(144, 202, 249, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  filter: blur(2px);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.6);
+  animation: blob-drift ease-in-out infinite alternate;
+}
+@keyframes blob-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(8vw, -6vh) scale(1.15); }
+}
+[data-theme="liquid-glass"] .card, [data-theme="liquid-glass"] header nav {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+/* --- fire: rising embers --- */
+[data-theme="fire"] .fx-layer i {
+  bottom: -2vh; top: auto;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFCC80, #E64A19 70%, transparent);
+  opacity: 0.8;
+  animation: ember-rise ease-in infinite;
+}
+@keyframes ember-rise {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+  70% { opacity: 0.6; }
+  100% { transform: translateY(-110vh) translateX(24px) scale(0.3); opacity: 0; }
+}
+[data-theme="fire"] .fx-layer::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 45% at 50% 108%, rgba(230, 74, 25, 0.14), transparent);
+}
+/* --- water: ripples --- */
+[data-theme="water"] .fx-layer b {
+  width: 24vmin; height: 24vmin;
+  border: 1.5px solid rgba(2, 136, 209, 0.25);
+  border-radius: 50%;
+  animation: ripple 6s ease-out infinite;
+}
+@keyframes ripple {
+  0% { transform: scale(0.2); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+/* --- barsana: drifting gulal dust --- */
+[data-theme="barsana"] .fx-layer i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFE082, rgba(217, 143, 0, 0.6));
+  opacity: 0.5;
+  animation: gulal-drift ease-in-out infinite alternate;
+}
+@keyframes gulal-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(6vw, 4vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-layer { display: none; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* skeleton */
+@keyframes shimmer { 0% { background-position: -300px 0; } 100% { background-position: 300px 0; } }
+.skeleton {
+  border-radius: var(--r-sm);
+  background: linear-gradient(90deg, var(--border) 25%, var(--surface) 50%, var(--border) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@media (max-width: 480px) {
+  .container { padding: 0 var(--sp-4); }
+  .card { padding: var(--sp-4); }
+}
