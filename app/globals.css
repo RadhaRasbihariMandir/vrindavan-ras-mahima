@@ -62,11 +62,11 @@
   --bg: #FFF4EC;
   --surface: #FFFCF8;
   --text: #2E1B12;
-  --heading: #8C2D0E;
-  --muted: #7A5540;
-  --accent: #E64A19;
+  --heading: #7A2809;
+  --muted: #6E4A36;
+  --accent: #C23B0C;
   --border: #F2D8C4;
-  --accent-soft: rgba(230, 74, 25, 0.1);
+  --accent-soft: rgba(194, 59, 12, 0.1);
 }
 [data-theme="water"] {
   --bg: #EDF5F8;
@@ -82,11 +82,11 @@
   --bg: #FBF3E4;
   --surface: #FFFCF3;
   --text: #322512;
-  --heading: #7A4A00;
-  --muted: #77623F;
-  --accent: #D98F00;
+  --heading: #6B4100;
+  --muted: #6B5A38;
+  --accent: #A66E00;
   --border: #EDD9B0;
-  --accent-soft: rgba(217, 143, 0, 0.12);
+  --accent-soft: rgba(166, 110, 0, 0.12);
 }
 
 * { box-sizing: border-box; }

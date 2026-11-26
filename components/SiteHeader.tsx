@@ -26,8 +26,8 @@ export default function SiteHeader() {
         className="container"
         style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "var(--sp-4)", minHeight: 64 }}
       >
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span style={{ fontFamily: "var(--font-display)", fontSize: "var(--step-2)", color: "var(--heading)", fontWeight: 600 }}>
+        <Link href="/" style={{ textDecoration: "none", flexShrink: 1, minWidth: 0 }}>
+          <span style={{ fontFamily: "var(--font-display)", fontSize: "var(--step-2)", color: "var(--heading)", fontWeight: 600, display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
             ॐ Vrindavan Ras Mahima
           </span>
         </Link>
